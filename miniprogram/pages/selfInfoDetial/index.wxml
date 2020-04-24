@@ -1,0 +1,81 @@
+<view class="header_card">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo"             bindgetuserinfo="getUserInfo"> 登录 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"             mode="cover"></image>
+    </block>
+  </view> 
+
+  <view class="cell_group">
+    <van-cell-group>
+      <van-field
+        value="{{userInfo.nickName}}"
+        label="用户名"
+        left-icon="contact"
+        disabled
+      />
+      <van-field
+        value="VIP级客户"
+        label="客户级别"
+        left-icon="diamond-o"
+        disabled
+      />
+      <van-field
+        value="{{clientInfo.companyName}}"
+        label="公司名称"
+        left-icon="wap-home-o"
+        bind:change="onChangeInfoCompany"
+        disabled
+      />
+      <van-field
+        value="{{clientInfo.userName}}"
+        label="姓名"
+        bind:change="onChangeInfoName"
+        left-icon="contact"
+      />
+      <van-field
+        value="{{clientInfo.phoneNum}}"
+        label="手机号"
+        placeholder="请输入手机号"
+        bind:change="onChangeInfoPhone"
+        left-icon="phone-o"
+      />
+      <van-field
+        value="{{ clientInfo.address }}"
+        center
+        clearable
+        label="客户地址"
+        placeholder="请输入客户地址"
+        use-button-slot
+        disabled
+      >
+        <van-button bind:click= "choiceAddress" slot="button" size="small" >选择地址</van-button>
+      </van-field>
+    </van-cell-group>
+
+    <view class="button_info">
+      <van-row>
+        <van-col span="12">
+          <van-button type="default" bind:click="cancelInfo" block>取消</van-button>
+        </van-col>
+        <van-col span="12">
+          <van-button type="danger" bind:click="submitInfo" block>确认</van-button>
+        </van-col>
+      </van-row>
+    </view>
+    
+
+    <van-popup
+      show="{{ showUpAdderss }}"
+      position="bottom"
+      custom-style="height: 46%;"
+      bind:close="onClose"
+    >
+      <van-area area-list="{{ areaList }}" value="110101" bind:confirm="addressOK" bind:cancel="addressCancel"/>
+    </van-popup>
+  </view>
+
+  <van-toast id="van-toast" />
+  
+
+</view>

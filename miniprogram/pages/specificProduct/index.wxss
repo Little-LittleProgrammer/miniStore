@@ -1,0 +1,10 @@
+/* miniprogram/pages/specificProduct/index.wxss */
+.specificProduct_image{
+  width: 100%;
+  height: 10rem
+}
+.specificProduct_money{
+  color: #F00;
+  font-size: 1.1rem
+  
+}

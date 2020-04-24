@@ -1,0 +1,14 @@
+<!--miniprogram/pages/specificProduct/index.wxml-->
+<header-Bar/>
+<view hidden="{{copperbased}}"  class="specificProduct_mainViem" >
+  <van-grid column-num="2" gutter="6" border="{{ false }}" center = '{{false}}'>
+    <van-grid-item use-slot wx:for="{{ productList }}" wx:key="index" bindtap="clickItem" data-index="{{item.productName}}">
+      <image
+        class="specificProduct_image"
+        src="{{item.imageUrl}}"
+      />
+      <text class="specificProduct_text">产品名称：{{item.productName}}</text>
+      <text class="specificProduct_money">￥：商谈</text>
+    </van-grid-item>
+  </van-grid>
+</view>

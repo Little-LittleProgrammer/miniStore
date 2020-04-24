@@ -1,0 +1,37 @@
+/* miniprogram/pages/allProduct/allProduct.wxss */
+.allProduct_sidebar{
+  position: absolute;
+  display: inline-block;
+  height: 100%;
+  width: 20%;
+  /*主盒子设置背景色为灰色*/
+  background: #f5f5f5;
+  text-align: center;
+  overflow: scroll;
+}
+
+.allProduct_mainViem{
+  /*右侧盒子使用了绝对定位*/
+ position: absolute;
+ right: 0;
+ flex: 1;
+ /*宽度75%，高度占满，并使用百分比布局*/
+ width: 80%;
+ height: 100%;
+ padding: 10px;
+ box-sizing: border-box;
+ background: #fff;
+ overflow: scroll;
+}
+
+.allProduct_image{
+  width: 128rpx;
+  height: 128rpx;
+  margin: 1.83rem 0 0 1rem;
+  border-radius: 50%;
+  float: left
+}
+
+.allProduct_text{
+  font-size: 11px
+}

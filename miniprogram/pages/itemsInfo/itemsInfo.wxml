@@ -1,0 +1,21 @@
+<!--pages/itemsInfo/itemsInfo.wxml-->
+<view>
+  <van-sticky>
+    <header-Bar/>
+  </van-sticky>
+</view>
+
+<view wx:for="{{goodsItems}}" wx:key="index">
+  <van-card
+    num="999"
+    tag="{{item.tag}}"
+    price="可商谈"
+    desc="质量保证，价格实惠"
+    title="{{item.productName}} "
+    thumb="{{item.imageUrl}}"
+  >
+    <view slot="footer">
+      <van-button size="mini">详细</van-button>
+    </view>
+  </van-card>
+</view>

@@ -1,0 +1,77 @@
+<!--index.wxml-->
+<view style=" background-color:#eee;height:100%">
+  <van-sticky>
+    <view class="index_header">
+    <header-Bar/>
+      <van-notice-bar
+        mode="closeable"
+        text="三门天泰汽车配件有限公司提醒您：疫情期间，也为您提供最优质的服务"
+      />
+      <van-tabs swipeable bind:click="onChangePage">
+        <van-tab wx:for="{{tabList}}" wx:key="index" title="{{item}}">
+        </van-tab>
+      </van-tabs>
+    </view>
+  </van-sticky>
+  <view wx:if="{{showPage}}">
+    <swiper class='u-wrp-bnr' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{swipeList}}" wx:key="index">
+        <swiper-item>
+          <image src='{{item.imageUrl}}' class='u-img-slide' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class="flex-item">
+      <image src="/static/icon/1.png" class="index_image"></image>
+      <text class="index_text">易于心安</text>
+      <image src="/static/icon/2.png" class="index_image"></image>
+      <text class="index_text">品质保证</text>
+      <image src="/static/icon/3.png" class="index_image"></image>
+      <text class="index_text">价格亲民</text>
+    </view>
+
+    <view class="index_title1">热销产品</view>
+    <van-grid border="false" column-num="3">
+      <van-grid-item use-slot wx:for="{{productImage}}" wx:key = "index">
+        <image src="{{item.imageUrl}}" class="index_product"></image>
+        <text>{{item.productName}}</text>
+      </van-grid-item>
+    </van-grid>
+
+    <view class="bottom_slogn">
+      您的开心就是我们最大的喜悦，互利共赢才是时代的潮流
+      
+    </view>
+
+    <van-overlay show="{{ show }}" bind:click="onClickHide">
+      <view class="wrapper">
+        <image class="block" src="cloud://westore-06q4g.7765-westore-06q4g-1301724071/static/ads/timg.jpg"></image>
+      </view>
+    </van-overlay>
+    </view>
+    <view wx:else>
+     <swiper class='slogn-img' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{swipeListLogn}}" wx:key="index">
+        <swiper-item>
+          <image src='{{item.imageUrl}}' class='u-img-slide' mode='aspectFill'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view style="background-color: #fff;">
+       <text decode="true" style="font-size:.7rem;margin:.3rem">&emsp;&emsp;三门天泰汽车配件有限公司，是专业生产摩擦片的厂家，地处风光秀丽的东海之滨，美丽的三门湾畔，位于浙江经济和工业发达的沿海经济区，公司座落在上三高速公路旁，距宁波、温州、杭州机场约80公里，交通十分便捷。公司引进台湾制造技术和生产测试设备，广集国内外企业先进技术和专业科技人才于一体，并与国内外多家大专院校、研究所建立长期合作关系，为企业形成了雄厚研制开发、生产和销售能力。一直坚持“恪守信誉、以人为本”的经营理念，“科技创新、质量第一”的管理信念。
+  　　我们一直追求专业化发展道路，始终秉持“质量第一，客户至上，开拓创新求发展”的运营方针，通过持续不断改进，始终掌握高端精密的核心技术，精湛的生产制造..</text>
+    </view>
+    <view class="detial">
+      <text>基本信息</text>
+      <view wx:for="{{companyIntroduce}}" wx:key="index">
+        <image src="{{item.imageUrl}}" style="width:100%;height:2.3rem"></image>
+      </view>
+    </view>
+  </view>
+</view>
+  
+
+
+
+ <footer-Bar/>

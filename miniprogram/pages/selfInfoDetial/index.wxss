@@ -1,0 +1,23 @@
+.header_card{
+  height: 100%;
+  align-items: center;
+  background-color: #eee;
+}
+.userinfo {
+  padding: 9% 0 0 0;
+  background-color: #fff;
+  /* flex-direction: column; */
+}
+.userinfo-avatar {
+  margin: 0 0 10% 40%;
+  width: 168rpx;
+  height: 168rpx;
+  border-radius: 50%;
+}
+.cell_group{
+  margin: .5rem 0 0 0;
+}
+.button_info{
+  background-color: #fff;
+  margin-top: .3rem
+}

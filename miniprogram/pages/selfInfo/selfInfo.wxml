@@ -1,0 +1,28 @@
+<!--pages/selfInfo/selfInfo.wxml-->
+
+<view class="header_card">
+  <image class="background-image" src="cloud://westore-06q4g.7765-westore-06q4g-1301724071/static/ads/1.png"></image>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo"             bindgetuserinfo="getUserInfo"> 登录 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}"             mode="cover"></image>
+      <view class="userinfo-nickname">{{userInfo.nickName}} </view>
+      <view class="userinfo-level"> VIP级别客户</view>
+    </block>
+    <van-icon bind:click="scancode" name="scan" size="20" style="float:left;margin:-1rem"/>
+  </view>
+
+</view>
+<view class='selfInfo_cell'>
+  <van-cell title="订单详细" is-link bind:click=''/>
+  <van-cell title="个人资料" link-type="navigateTo"
+  url="/pages/selfInfoDetial/index" is-link>
+  </van-cell>
+</view>
+
+
+<navigator target = 'miniProgram' open-type="exit">
+  <van-button plain hairline block type="info" class="selfInfo_button">退出程序</van-button>
+</navigator>
+
+<footer-Bar/>

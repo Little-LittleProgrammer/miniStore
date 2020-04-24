@@ -1,0 +1,23 @@
+<!--miniprogram/pages/allProduct/allProduct.wxml-->
+<header-Bar/>
+
+<van-sidebar active-key="{{ activeKey }}" bind:change="onChangeSidebar" class="allProduct_sidebar">
+  <van-sidebar-item title="铜基刹车片" />
+  <van-sidebar-item title="铆钉" />
+</van-sidebar>
+
+<view hidden="{{copperbased}}"  class="allProduct_mainViem" >
+  <van-grid column-num="3" border="{{ false }}" >
+    <van-grid-item use-slot wx:for="{{ productList }}" wx:key="index" bindtap="clickItem" data-index="{{item.productName}}">
+      <image
+        class="allProduct_image"
+        src="{{item.imageUrl}}"
+      />
+      <text class="allProduct_text">{{item.productName}}</text>
+    </van-grid-item>
+  </van-grid>
+</view>
+
+
+
+<footer-Bar/>
